@@ -13,7 +13,7 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
 public class TestShapeDirectionBlock extends HorizontalDirectionalBaseBlock {
-    private static final DirectionVoxelShapesBundle SHAPE = OEVoxelShapeUtils.makeAllDirection(OEVoxelShapeUtils.getShapeFromResource(new ResourceLocation(OtyacraftEngineTest.MODID, "test2"), TestShapeBlock.class));
+    private static final DirectionVoxelShapesBundle SHAPE = OEVoxelShapeUtils.makeAllDirection(OEVoxelShapeUtils.getShapeFromResource(ResourceLocation.fromNamespaceAndPath(OtyacraftEngineTest.MODID, "test2"), TestShapeBlock.class));
 
     public TestShapeDirectionBlock(Properties properties) {
         super(properties);

@@ -81,7 +81,7 @@ public class IkisugiVoxelShapes {
         ResourceLocation relocation;
         if (shapeJ.has("render_edges") && shapeJ.get("render_edges").isJsonPrimitive()) {
             var reloc = shapeJ.get("render_edges").getAsString();
-            relocation = new ResourceLocation(reloc);
+            relocation = ResourceLocation.parse(reloc);
         } else {
             relocation = location;
         }

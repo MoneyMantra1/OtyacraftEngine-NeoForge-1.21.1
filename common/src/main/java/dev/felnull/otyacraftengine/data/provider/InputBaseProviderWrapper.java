@@ -99,6 +99,6 @@ public abstract class InputBaseProviderWrapper extends BasicProviderWrapper {
             }
         }
 
-        return Pair.of(new ResourceLocation(relativePath.getName(1).toFile().getName(), sb.toString()), ex);
+        return Pair.of(ResourceLocation.fromNamespaceAndPath(relativePath.getName(1).toFile().getName(), sb.toString()), ex);
     }
 }

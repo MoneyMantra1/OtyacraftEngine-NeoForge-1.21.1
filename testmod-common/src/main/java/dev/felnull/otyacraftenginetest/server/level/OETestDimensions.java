@@ -23,9 +23,9 @@ import java.util.List;
 import java.util.OptionalLong;
 
 public class OETestDimensions {
-    public static final ResourceKey<DimensionType> IKISUGI_DIM_TYPE = ResourceKey.create(Registries.DIMENSION_TYPE, new ResourceLocation(OtyacraftEngineTest.MODID, "ikisugi_dimension"));
-    public static final ResourceKey<LevelStem> IKISUGI_LEVEL_STEM = ResourceKey.create(Registries.LEVEL_STEM, new ResourceLocation(OtyacraftEngineTest.MODID, "ikisugi_dimension"));
-    public static final ResourceKey<NoiseGeneratorSettings> IKISUGI_NOISE_GENERATOR_SETTINGS = ResourceKey.create(Registries.NOISE_SETTINGS, new ResourceLocation(OtyacraftEngineTest.MODID, "ikisugi_level_stem_noise_generator_settings"));
+    public static final ResourceKey<DimensionType> IKISUGI_DIM_TYPE = ResourceKey.create(Registries.DIMENSION_TYPE, ResourceLocation.fromNamespaceAndPath(OtyacraftEngineTest.MODID, "ikisugi_dimension"));
+    public static final ResourceKey<LevelStem> IKISUGI_LEVEL_STEM = ResourceKey.create(Registries.LEVEL_STEM, ResourceLocation.fromNamespaceAndPath(OtyacraftEngineTest.MODID, "ikisugi_dimension"));
+    public static final ResourceKey<NoiseGeneratorSettings> IKISUGI_NOISE_GENERATOR_SETTINGS = ResourceKey.create(Registries.NOISE_SETTINGS, ResourceLocation.fromNamespaceAndPath(OtyacraftEngineTest.MODID, "ikisugi_level_stem_noise_generator_settings"));
 
     protected static final NoiseSettings IKISUGI_NOISE_SETTINGS = NoiseSettings.create(0, 128, 1, 2);
 

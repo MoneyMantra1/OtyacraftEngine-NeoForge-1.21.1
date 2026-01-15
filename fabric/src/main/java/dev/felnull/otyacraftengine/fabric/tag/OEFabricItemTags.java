@@ -51,7 +51,7 @@ public class OEFabricItemTags {
     }
 
     private static ResourceLocation cLoc(String path) {
-        return new ResourceLocation("c", path);
+        return ResourceLocation.fromNamespaceAndPath("c", path);
     }
 
     private static ResourceLocation[] drinks() {

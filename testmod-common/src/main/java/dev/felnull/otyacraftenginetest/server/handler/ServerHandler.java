@@ -12,7 +12,7 @@ public class ServerHandler {
                 .when(LootItemRandomChanceCondition.randomChance(1f))
                 .add(LootItem.lootTableItem(Items.APPLE).setWeight(1))
                 .add(LootItem.lootTableItem(Items.APPLE).setWeight(4));
-        modifyAccess.addLootPool(new ResourceLocation(OtyacraftEngine.MODID, "test"), antennaPoolB);*//*
+        modifyAccess.addLootPool(ResourceLocation.fromNamespaceAndPath(OtyacraftEngine.MODID, "test"), antennaPoolB);*//*
     }
 
     private static CompoundEventResult<LootTable> onLootTableReplace(LootTables lootManager, ResourceLocation id, LootTable original) {

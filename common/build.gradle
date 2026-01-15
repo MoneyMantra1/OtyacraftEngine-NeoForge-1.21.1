@@ -54,5 +54,13 @@ publishing {
                 password = "${project.maven_put_pass}" != '' ? "${project.maven_put_pass}" : System.getenv('mavenpassword')
             }
         }
+        maven {
+            name = "GitHubPackages"
+            url = "https://maven.pkg.github.com/TeamFelnull/OtyacraftEngine"
+            credentials {
+                username = System.getenv("GITHUB_ACTOR")
+                password = System.getenv("GITHUB_TOKEN")
+            }
+        }
     }
 }

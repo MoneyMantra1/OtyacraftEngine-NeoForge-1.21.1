@@ -45,7 +45,7 @@ public class ClientPlayerInfoManager {
     private Function<String, ResourceLocation> createSkinTextureLocationCache() {
         return FNDataUtil.memoize(url -> {
             String hashStr = Hashing.sha1().hashUnencodedChars(FilenameUtils.getBaseName(url)).toString();
-            return new ResourceLocation("skins/" + hashStr);
+            return ResourceLocation.parse("skins/" + hashStr);
         });
     }
 

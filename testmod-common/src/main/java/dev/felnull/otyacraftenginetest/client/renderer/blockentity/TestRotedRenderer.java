@@ -20,7 +20,7 @@ import net.minecraft.util.Mth;
 import java.util.UUID;
 
 public class TestRotedRenderer extends AbstractBlockEntityRenderer<TestRotedBlockEntity> {
-    public static final ResourceLocation TEST_TEXTURE = new ResourceLocation(OtyacraftEngineTest.MODID, "textures/gui/test.png");
+    public static final ResourceLocation TEST_TEXTURE = ResourceLocation.fromNamespaceAndPath(OtyacraftEngineTest.MODID, "textures/gui/test.png");
     private static final Minecraft mc = Minecraft.getInstance();
     private static final UUID morimoriUUID = UUID.fromString("0f286fc2-0c86-42d5-8518-c306cad74f03");
     private static final String morimoriName = "MoriMori_0317_jp";

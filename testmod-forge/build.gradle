@@ -1,10 +1,10 @@
 plugins {
-    id "com.github.johnrengelman.shadow" version "7.1.2"
+    id "com.github.johnrengelman.shadow" version "8.1.1"
 }
 
 architectury {
     platformSetupLoomIde()
-    forge()
+    neoForge()
 }
 
 def generatedResources = file("src/generated")
@@ -18,11 +18,11 @@ sourceSets {
 loom {
     accessWidenerPath = project(":common").loom.accessWidenerPath
 
-    forge {
+    neoForge {
         mixinConfig "otyacraftengine.mixins.json"
 
         mods {
-            forge {
+            neoforge {
                 sourceSet project(":forge").sourceSets.main
             }
         }
@@ -44,11 +44,11 @@ configurations {
     common
     compileClasspath.extendsFrom common
     runtimeClasspath.extendsFrom common
-    developmentForge.extendsFrom common
+    developmentNeoForge.extendsFrom common
 }
 
 dependencies {
-    forge "net.minecraftforge:forge:${rootProject.forge_version}"
+    neoForge "net.neoforged:neoforge:${rootProject.neoforge_version}"
 
     implementation project(path: ":forge", configuration: "namedElements")
     common(project(path: ":common", configuration: "namedElements")) { transitive false }
@@ -57,7 +57,7 @@ dependencies {
     runtimeOnly "dev.felnull:felnull-java-library:${rootProject.felnull_version}"
     runtimeOnly "dev.felnull:felnull-java-library-natives:${rootProject.felnull_version}"
     runtimeOnly 'com.madgag:animated-gif-lib:1.4'
-    forgeDependencies "dev.felnull:felnull-java-library:${rootProject.felnull_version}"
-    forgeDependencies "dev.felnull:felnull-java-library-natives:${rootProject.felnull_version}"
-    forgeDependencies 'com.madgag:animated-gif-lib:1.4'
+    neoForgeDependencies "dev.felnull:felnull-java-library:${rootProject.felnull_version}"
+    neoForgeDependencies "dev.felnull:felnull-java-library-natives:${rootProject.felnull_version}"
+    neoForgeDependencies 'com.madgag:animated-gif-lib:1.4'
 }

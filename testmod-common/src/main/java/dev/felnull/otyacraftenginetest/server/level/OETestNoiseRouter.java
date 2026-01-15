@@ -37,8 +37,8 @@ public class OETestNoiseRouter {
 
     }
 
-    private static final ResourceKey<DensityFunction> SHIFT_X = ResourceKey.create(Registries.DENSITY_FUNCTION, new ResourceLocation("shift_x"));
-    private static final ResourceKey<DensityFunction> SHIFT_Z = ResourceKey.create(Registries.DENSITY_FUNCTION, new ResourceLocation("shift_z"));
+    private static final ResourceKey<DensityFunction> SHIFT_X = ResourceKey.create(Registries.DENSITY_FUNCTION, ResourceLocation.parse("shift_x"));
+    private static final ResourceKey<DensityFunction> SHIFT_Z = ResourceKey.create(Registries.DENSITY_FUNCTION, ResourceLocation.parse("shift_z"));
 
     private static NoiseRouter noNewCaves(HolderGetter<DensityFunction> p_255724_, HolderGetter<NormalNoise.NoiseParameters> p_255986_, DensityFunction p_256378_) {
         DensityFunction densityfunction = getFunction(p_255724_, SHIFT_X);
