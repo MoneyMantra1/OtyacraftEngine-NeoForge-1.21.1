@@ -14,8 +14,6 @@ loom {
 
     neoForge {
 
-        mixinConfig "otyacraftengine-common.mixins.json"
-        mixinConfig "otyacraftengine.mixins.json"
     }
 }
 
