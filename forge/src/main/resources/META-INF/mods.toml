@@ -3,6 +3,12 @@ loaderVersion = "[2,)"
 issueTrackerURL = "https://github.com/TeamFelnull/OtyacraftEngine/issues"
 license = "GNU LGPLv3"
 
+[[mixins]]
+config="otyacraftengine-common.mixins.json"
+
+[[mixins]]
+config="otyacraftengine.mixins.json"
+
 [[mods]]
 modId = "otyacraftengine"
 version = "${version}"
