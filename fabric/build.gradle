@@ -127,6 +127,14 @@ publishing {
                 password = "${project.maven_put_pass}" != '' ? "${project.maven_put_pass}" : System.getenv('mavenpassword')
             }
         }
+        maven {
+            name = "GitHubPackages"
+            url = "https://maven.pkg.github.com/TeamFelnull/OtyacraftEngine"
+            credentials {
+                username = System.getenv("GITHUB_ACTOR")
+                password = System.getenv("GITHUB_TOKEN")
+            }
+        }
     }
 }
 
@@ -141,7 +149,7 @@ curseforge {
 
             releaseType = "${rootProject.release_type}"
             addGameVersion "${rootProject.minecraft_version}"
-            addGameVersion 'Java 17'
+            addGameVersion 'Java 21'
             addGameVersion "Fabric"
             addGameVersion "Quilt"
 

@@ -33,7 +33,7 @@ public class ClientIVShapeLoader {
                 var p = location.getPath();
                 var vs = VoxelClientShape.parse(jo);
                 if (vs != null)
-                    builder.put(new ResourceLocation(location.getNamespace(), p.substring("voxel_shape/".length(), p.length() - ".json".length())), vs);
+                    builder.put(ResourceLocation.fromNamespaceAndPath(location.getNamespace(), p.substring("voxel_shape/".length(), p.length() - ".json".length())), vs);
             } catch (Exception e) {
                 LOGGER.error("Error occurred while loading shape resource json " + location, e);
             }

@@ -14,8 +14,8 @@ import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 
 public abstract class BlockStateAndModelProviderWrapper extends DataProviderWrapper<DataProvider> {
-    public static final ResourceLocation OE_BASE_BLOCK_ENTITY_MODEL = new ResourceLocation(OtyacraftEngine.MODID, "base/block_entity");
-    public static final ResourceLocation OE_BASE_BLOCK_ENTITY_APPEARANCE_MODEL = new ResourceLocation(OtyacraftEngine.MODID, "base/block_entity_appearance");
+    public static final ResourceLocation OE_BASE_BLOCK_ENTITY_MODEL = ResourceLocation.fromNamespaceAndPath(OtyacraftEngine.MODID, "base/block_entity");
+    public static final ResourceLocation OE_BASE_BLOCK_ENTITY_APPEARANCE_MODEL = ResourceLocation.fromNamespaceAndPath(OtyacraftEngine.MODID, "base/block_entity_appearance");
     private final DataProvider blockStateAndModelProvider;
 
     public BlockStateAndModelProviderWrapper(PackOutput packOutput, CrossDataGeneratorAccess crossDataGeneratorAccess) {

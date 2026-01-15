@@ -1,9 +1,9 @@
 package dev.felnull.otyacraftenginetest.forge;
 
-import dev.architectury.platform.forge.EventBuses;
+import dev.architectury.platform.neoforge.EventBuses;
 import dev.felnull.otyacraftenginetest.OtyacraftEngineTest;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.javafmlmod.FMLJavaModLoadingContext;
 
 @Mod(OtyacraftEngineTest.MODID)
 public class OtyacraftEngineTestForge {

@@ -23,6 +23,6 @@ public class OETestRecipeProvider extends RecipeProviderWrapper {
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, Items.APPLE, 1)
                 .requires(Items.EGG)
                 .unlockedBy("has_item", providerAccess.has(Items.EGG))
-                .save(exporter, new ResourceLocation(OtyacraftEngineTest.MODID, "test"));
+                .save(exporter, ResourceLocation.fromNamespaceAndPath(OtyacraftEngineTest.MODID, "test"));
     }
 }

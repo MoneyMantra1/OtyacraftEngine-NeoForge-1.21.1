@@ -19,7 +19,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TestCode3Screen extends Screen {
-    public static final ResourceLocation TEST_TEXTURE = new ResourceLocation(OtyacraftEngineTest.MODID, "textures/gui/test.png");
+    public static final ResourceLocation TEST_TEXTURE = ResourceLocation.fromNamespaceAndPath(OtyacraftEngineTest.MODID, "textures/gui/test.png");
     private static final TextureRegion SPECIFY = TextureRegion.create(TEST_TEXTURE, 0, 0, 50, 50, 100, 100);
     private static final TextureRegion ICON_SPECIFY = TextureRegion.create(TEST_TEXTURE, 0, 0, 14, 14, 14, 14);
     private RadioButton radio1;

@@ -28,7 +28,7 @@ public class DivisionModelProcessSubProviderWrapper extends ModelProcessSubProvi
             var p = modelData.location().getPath();
             var ps = p.split("/");
             ps[ps.length - 1] = n.getKey();
-            return new ModelProcessProviderWrapper.ModelData(new ResourceLocation(modelData.location().getNamespace(), String.join("/", ps)), n.getValue());
+            return new ModelProcessProviderWrapper.ModelData(ResourceLocation.fromNamespaceAndPath(modelData.location().getNamespace(), String.join("/", ps)), n.getValue());
         }).toList();
     }
 

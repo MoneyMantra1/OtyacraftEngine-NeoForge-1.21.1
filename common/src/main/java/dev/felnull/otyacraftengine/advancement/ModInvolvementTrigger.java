@@ -10,7 +10,7 @@ import net.minecraft.world.item.ItemStack;
 import org.jetbrains.annotations.NotNull;
 
 public class ModInvolvementTrigger extends SimpleCriterionTrigger<ModInvolvementTrigger.TriggerInstance> {
-    static final ResourceLocation ID = new ResourceLocation(OtyacraftEngine.MODID, "mod_involvement");
+    static final ResourceLocation ID = ResourceLocation.fromNamespaceAndPath(OtyacraftEngine.MODID, "mod_involvement");
 
     @Override
     public ResourceLocation getId() {

@@ -141,11 +141,11 @@ public class BlockStateAndModelProviderAccessImpl implements BlockStateAndModelP
     }
 
     private ResourceLocation blockLoc(ResourceLocation loc) {
-        return new ResourceLocation(loc.getNamespace(), "block/" + loc.getPath());
+        return ResourceLocation.fromNamespaceAndPath(loc.getNamespace(), "block/" + loc.getPath());
     }
 
     private ResourceLocation blockLoc(String name) {
-        return new ResourceLocation(crossDataGeneratorAccess.getMod().getModId(), "block/" + name);
+        return ResourceLocation.fromNamespaceAndPath(crossDataGeneratorAccess.getMod().getModId(), "block/" + name);
     }
 
     @Override

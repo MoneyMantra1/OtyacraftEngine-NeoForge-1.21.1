@@ -11,6 +11,6 @@ public class TestModelBundle extends SimpleBaseModelBundle {
     public final ModelHolder TEST_3 = holder("test_3");
 
     protected ModelHolder holder(String name) {
-        return holder(new ResourceLocation(OtyacraftEngineTest.MODID, "item/test_models/" + name));
+        return holder(ResourceLocation.fromNamespaceAndPath(OtyacraftEngineTest.MODID, "item/test_models/" + name));
     }
 }

@@ -9,7 +9,7 @@ import org.jetbrains.annotations.Nullable;
 
 
 public interface OEBaseComponent extends OEBaseGUI {
-    ResourceLocation OE_WIDGETS = new ResourceLocation(OtyacraftEngine.MODID, "textures/gui/widgets.png");
+    ResourceLocation OE_WIDGETS = ResourceLocation.fromNamespaceAndPath(OtyacraftEngine.MODID, "textures/gui/widgets.png");
 
     @NotNull
     TextureRegion getTexture();
