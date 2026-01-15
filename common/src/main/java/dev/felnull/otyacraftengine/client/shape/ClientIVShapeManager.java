@@ -17,7 +17,7 @@ import java.util.Set;
 
 public class ClientIVShapeManager extends PlatformResourceReloadListener<ClientIVShapeLoader> {
     private static final ClientIVShapeManager INSTANCE = new ClientIVShapeManager();
-    private static final ResourceLocation VOXEL_SHAPE = new ResourceLocation(OtyacraftEngine.MODID, "voxel_shape");
+    private static final ResourceLocation VOXEL_SHAPE = ResourceLocation.fromNamespaceAndPath(OtyacraftEngine.MODID, "voxel_shape");
     private Map<ResourceLocation, VoxelClientShape> voxelClientShapes;
     private Map<ResourceLocation, VoxelClientShape> legacyVoxelClientShapes = new HashMap<>();
 

@@ -296,7 +296,7 @@ public interface BlockStateAndModelProviderAccess {
      * @param block ブロック
      */
     default void builtinEntityBlockItemModel(@NotNull Block block) {
-        parentedBlockItemModel(block, new ResourceLocation("builtin/entity"));
+        parentedBlockItemModel(block, ResourceLocation.parse("builtin/entity"));
     }
 
     /**

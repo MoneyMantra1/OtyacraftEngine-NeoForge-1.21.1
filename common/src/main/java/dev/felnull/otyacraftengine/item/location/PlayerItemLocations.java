@@ -13,7 +13,7 @@ public class PlayerItemLocations {
     public static final HandItemLocationFactory HAND_ITEM = new HandItemLocationFactory();
 
     public static void init() {
-        register(new ResourceLocation(OtyacraftEngine.MODID, "hand"), HAND_ITEM);
+        register(ResourceLocation.fromNamespaceAndPath(OtyacraftEngine.MODID, "hand"), HAND_ITEM);
     }
 
     private static void register(ResourceLocation location, PlayerItemLocationFactory<? extends PlayerItemLocation> factory) {
@@ -35,7 +35,7 @@ public class PlayerItemLocations {
     }
 
     public static PlayerItemLocation loadFromTag(CompoundTag tag) {
-        var rl = new ResourceLocation(tag.getString("id"));
+        var rl = ResourceLocation.parse(tag.getString("id"));
         var factory = FACTORS.get(rl);
         if (factory == null)
             throw new IllegalArgumentException("Unregistered player item location");

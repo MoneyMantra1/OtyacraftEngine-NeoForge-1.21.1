@@ -37,7 +37,7 @@ public class OEForgeItemTags {
     }
 
     private static ResourceLocation fgLoc(String path) {
-        return new ResourceLocation("forge", path);
+        return ResourceLocation.fromNamespaceAndPath("forge", path);
     }
 
     private static ResourceLocation[] drinks() {

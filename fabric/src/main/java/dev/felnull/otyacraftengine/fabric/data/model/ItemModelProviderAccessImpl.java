@@ -95,6 +95,6 @@ public class ItemModelProviderAccessImpl implements ItemModelProviderAccess {
     }
 
     private static ResourceLocation decorateItemModelLocation(ResourceLocation location) {
-        return new ResourceLocation(location.getNamespace(), "item/" + location.getPath());
+        return ResourceLocation.fromNamespaceAndPath(location.getNamespace(), "item/" + location.getPath());
     }
 }

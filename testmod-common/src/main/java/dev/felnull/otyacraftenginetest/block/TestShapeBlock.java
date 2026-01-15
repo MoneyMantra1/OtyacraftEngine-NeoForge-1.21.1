@@ -14,7 +14,7 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
 public class TestShapeBlock extends Block {
-    private static final DirectionVoxelShapesBundle SHAPE = OEVoxelShapeUtils.makeAllDirection(OEVoxelShapeUtils.getShapeFromResource(new ResourceLocation(OtyacraftEngineTest.MODID, "test1"), TestShapeBlock.class));
+    private static final DirectionVoxelShapesBundle SHAPE = OEVoxelShapeUtils.makeAllDirection(OEVoxelShapeUtils.getShapeFromResource(ResourceLocation.fromNamespaceAndPath(OtyacraftEngineTest.MODID, "test1"), TestShapeBlock.class));
 
     public TestShapeBlock(Properties properties) {
         super(properties);

@@ -33,7 +33,7 @@ import java.util.function.Consumer;
  */
 public final class OETextureUtils {
     private static final Minecraft mc = Minecraft.getInstance();
-    private static final ResourceLocation ERROR_ICON = new ResourceLocation(OtyacraftEngine.MODID, "textures/gui/error_icon.png");
+    private static final ResourceLocation ERROR_ICON = ResourceLocation.fromNamespaceAndPath(OtyacraftEngine.MODID, "textures/gui/error_icon.png");
     private static ResourceLocation LOADING_ICON;
 
     /**
@@ -131,7 +131,7 @@ public final class OETextureUtils {
     public static ResourceLocation getLoadingIcon() {
         if (LOADING_ICON == null) {
             ResourceManager rm = mc.getResourceManager();
-            var r = rm.getResource(new ResourceLocation(OtyacraftEngine.MODID, "textures/gui/loading_icon.gif"));
+            var r = rm.getResource(ResourceLocation.fromNamespaceAndPath(OtyacraftEngine.MODID, "textures/gui/loading_icon.gif"));
             if (r.isPresent()) {
                 try (var st = r.get().open()) {
                     var ret = getAndLoadNativeTexture(UUID.randomUUID(), st);

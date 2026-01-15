@@ -6,13 +6,13 @@ plugins {
 
 architectury {
     platformSetupLoomIde()
-    forge()
+    neoForge()
 }
 
 loom {
     accessWidenerPath = project(":common").loom.accessWidenerPath
 
-    forge {
+    neoForge {
         convertAccessWideners = true
         extraAccessWideners.add loom.accessWidenerPath.get().asFile.name
 
@@ -26,21 +26,21 @@ configurations {
     shadowCommon
     compileClasspath.extendsFrom common
     runtimeClasspath.extendsFrom common
-    developmentForge.extendsFrom common
-    forgeDependencies.extendsFrom shadowIn
+    developmentNeoForge.extendsFrom common
+    neoForgeDependencies.extendsFrom shadowIn
     shadowCommon.extendsFrom shadowIn
 }
 
 dependencies {
-    forge "net.minecraftforge:forge:${rootProject.forge_version}"
+    neoForge "net.neoforged:neoforge:${rootProject.neoforge_version}"
     
-    modApi "dev.architectury:architectury-forge:${rootProject.architectury_version}"
+    modApi "dev.architectury:architectury-neoforge:${rootProject.architectury_version}"
 
     common(project(path: ":common", configuration: "namedElements")) { transitive false }
-    shadowCommon(project(path: ":common", configuration: "transformProductionForge")) { transitive = false }
+    shadowCommon(project(path: ":common", configuration: "transformProductionNeoForge")) { transitive = false }
 
-    modApi "me.shedaniel.cloth:cloth-config-forge:${rootProject.cloth_config_version}"
-    modRuntimeOnly "me.shedaniel:RoughlyEnoughItems-forge:${rootProject.rei_version}"
+    modApi "me.shedaniel.cloth:cloth-config-neoforge:${rootProject.cloth_config_version}"
+    modRuntimeOnly "me.shedaniel:RoughlyEnoughItems-neoforge:${rootProject.rei_version}"
 
     shadowIn "dev.felnull:felnull-java-library:${rootProject.felnull_version}"
     shadowIn 'com.madgag:animated-gif-lib:1.4'
@@ -128,6 +128,14 @@ publishing {
                 password = "${project.maven_put_pass}" != '' ? "${project.maven_put_pass}" : System.getenv('mavenpassword')
             }
         }
+        maven {
+            name = "GitHubPackages"
+            url = "https://maven.pkg.github.com/TeamFelnull/OtyacraftEngine"
+            credentials {
+                username = System.getenv("GITHUB_ACTOR")
+                password = System.getenv("GITHUB_TOKEN")
+            }
+        }
     }
 }
 
@@ -142,8 +150,8 @@ curseforge {
 
             releaseType = "${rootProject.release_type}"
             addGameVersion "${rootProject.minecraft_version}"
-            addGameVersion 'Java 17'
-            addGameVersion "Forge"
+            addGameVersion 'Java 21'
+            addGameVersion "NeoForge"
 
             project.support_versions.split(",").each {
                 String version -> addGameVersion version
@@ -155,11 +163,11 @@ curseforge {
             }
 
             mainArtifact(file("${project.buildDir}/libs/${rootProject.archives_base_name}-${project.name}-mc${rootProject.minecraft_version}-${project.mod_version}.jar")) {
-                displayName = "${rootProject.mod_display_name}-${rootProject.minecraft_version}-${project.mod_version}-Forge"
+                displayName = "${rootProject.mod_display_name}-${rootProject.minecraft_version}-${project.mod_version}-NeoForge"
             }
 
             addArtifact(file("${project.buildDir}/libs/${rootProject.archives_base_name}-${project.name}-mc${rootProject.minecraft_version}-${project.mod_version}-sources.jar")) {
-                displayName = "${rootProject.mod_display_name}-${rootProject.minecraft_version}-${project.mod_version}-Forge-sources"
+                displayName = "${rootProject.mod_display_name}-${rootProject.minecraft_version}-${project.mod_version}-NeoForge-sources"
             }
         }
     }
@@ -169,12 +177,12 @@ if (System.getenv('modrinthapikey') != null && "${modrinth_id}" != '') {
     modrinth {
         token = System.getenv('modrinthapikey')
         projectId = "${rootProject.modrinth_id}"
-        versionName = "${rootProject.mod_display_name}-${rootProject.minecraft_version}-${project.mod_version}-Forge"
-        versionNumber = "${rootProject.minecraft_version}-${project.mod_version}-Forge"
+        versionName = "${rootProject.mod_display_name}-${rootProject.minecraft_version}-${project.mod_version}-NeoForge"
+        versionNumber = "${rootProject.minecraft_version}-${project.mod_version}-NeoForge"
         versionType = "${project.release_type}"
         uploadFile = file("${project.buildDir}/libs/${rootProject.archives_base_name}-${project.name}-mc${rootProject.minecraft_version}-${project.mod_version}.jar")
         gameVersions = List.of(project.support_versions.split(","))
-        loaders = ["forge"]
+        loaders = ["neoforge"]
         dependencies {
             required.project("9s6osm5g")//Cloth Config API
             required.project("lhGA9TYQ")//Architectury API

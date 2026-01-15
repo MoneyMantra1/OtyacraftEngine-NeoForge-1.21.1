@@ -8,7 +8,7 @@ public interface DataProviderWrapperBase {
     CrossDataGeneratorAccess getCrossGeneratorAccess();
 
     default ResourceLocation modLoc(String id) {
-        return new ResourceLocation(getCrossGeneratorAccess().getMod().getModId(), id);
+        return ResourceLocation.fromNamespaceAndPath(getCrossGeneratorAccess().getMod().getModId(), id);
     }
 
     default DataGenerator getGenerator() {
