@@ -141,7 +141,7 @@ curseforge {
 
             releaseType = "${rootProject.release_type}"
             addGameVersion "${rootProject.minecraft_version}"
-            addGameVersion 'Java 17'
+            addGameVersion 'Java 21'
             addGameVersion "Fabric"
             addGameVersion "Quilt"
 
