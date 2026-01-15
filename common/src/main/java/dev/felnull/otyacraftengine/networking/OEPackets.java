@@ -13,10 +13,10 @@ import net.minecraft.resources.ResourceLocation;
 import java.util.UUID;
 
 public class OEPackets {
-    public static final ResourceLocation BLOCK_ENTITY_INSTRUCTION = new ResourceLocation(OtyacraftEngine.MODID, "block_entity_instruction");
-    public static final ResourceLocation BLOCK_ENTITY_INSTRUCTION_RETURN = new ResourceLocation(OtyacraftEngine.MODID, "block_entity_instruction_return");
-    public static final ResourceLocation ITEM_INSTRUCTION = new ResourceLocation(OtyacraftEngine.MODID, "item_instruction");
-    public static final ResourceLocation ITEM_INSTRUCTION_RETURN = new ResourceLocation(OtyacraftEngine.MODID, "item_instruction_return");
+    public static final ResourceLocation BLOCK_ENTITY_INSTRUCTION = ResourceLocation.fromNamespaceAndPath(OtyacraftEngine.MODID, "block_entity_instruction");
+    public static final ResourceLocation BLOCK_ENTITY_INSTRUCTION_RETURN = ResourceLocation.fromNamespaceAndPath(OtyacraftEngine.MODID, "block_entity_instruction_return");
+    public static final ResourceLocation ITEM_INSTRUCTION = ResourceLocation.fromNamespaceAndPath(OtyacraftEngine.MODID, "item_instruction");
+    public static final ResourceLocation ITEM_INSTRUCTION_RETURN = ResourceLocation.fromNamespaceAndPath(OtyacraftEngine.MODID, "item_instruction_return");
 
     public static void init() {
         NetworkManager.registerReceiver(NetworkManager.c2s(), BLOCK_ENTITY_INSTRUCTION, (friendlyByteBuf, packetContext) -> ServerMessageHandler.onBlockEntityInstructionMessage(new BlockEntityInstructionMessage(friendlyByteBuf), packetContext));

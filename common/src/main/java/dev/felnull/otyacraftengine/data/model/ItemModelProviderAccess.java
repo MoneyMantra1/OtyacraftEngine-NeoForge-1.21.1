@@ -118,7 +118,7 @@ public interface ItemModelProviderAccess {
      */
     @NotNull
     default MutableFileModel builtinEntityItem(@NotNull Item item) {
-        return parentedItem(item, new ResourceLocation("builtin/entity"));
+        return parentedItem(item, ResourceLocation.parse("builtin/entity"));
     }
 
     /**
@@ -129,7 +129,7 @@ public interface ItemModelProviderAccess {
      */
     @NotNull
     default MutableFileModel builtinEntityItem(@NotNull ResourceLocation itemLocation) {
-        return parentedItem(itemLocation, new ResourceLocation("builtin/entity"));
+        return parentedItem(itemLocation, ResourceLocation.parse("builtin/entity"));
     }
 
     /**

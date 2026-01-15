@@ -8,9 +8,9 @@ import net.minecraft.resources.ResourceLocation;
 
 public class TestModels {
     private static final ModelCollectiveRegister REGISTER = ModelCollectiveRegister.create();
-    public static ModelHolder KAMESUTA_MODEL = REGISTER.register(new ResourceLocation(OtyacraftEngineTest.MODID, "block/test_model"));
-    public static ModelHolder KAMESUTA_ANTENNA_MODEL = REGISTER.register(new ResourceLocation(OtyacraftEngineTest.MODID, "item/kamesuta_antenna"));
-    public static ModelHolder SEA_CHICKEN_MODEL = REGISTER.register(new ResourceLocation(OtyacraftEngineTest.MODID, "item/sea_chicken"));
+    public static ModelHolder KAMESUTA_MODEL = REGISTER.register(ResourceLocation.fromNamespaceAndPath(OtyacraftEngineTest.MODID, "block/test_model"));
+    public static ModelHolder KAMESUTA_ANTENNA_MODEL = REGISTER.register(ResourceLocation.fromNamespaceAndPath(OtyacraftEngineTest.MODID, "item/kamesuta_antenna"));
+    public static ModelHolder SEA_CHICKEN_MODEL = REGISTER.register(ResourceLocation.fromNamespaceAndPath(OtyacraftEngineTest.MODID, "item/sea_chicken"));
     public static TestModelBundle TEST_MODELS = REGISTER.register(new TestModelBundle());
 
     public static void init(ModelRegister register) {

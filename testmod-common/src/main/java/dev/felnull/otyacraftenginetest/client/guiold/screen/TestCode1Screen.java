@@ -13,7 +13,7 @@ import net.minecraft.resources.ResourceLocation;
 import java.util.UUID;
 
 public class TestCode1Screen extends Screen {
-    public static final ResourceLocation TEST_TEXTURE = new ResourceLocation(OtyacraftEngineTest.MODID, "textures/gui/test.png");
+    public static final ResourceLocation TEST_TEXTURE = ResourceLocation.fromNamespaceAndPath(OtyacraftEngineTest.MODID, "textures/gui/test.png");
     private static final String testURL = "https://i.imgur.com/zcFCxfT.png";
     private static final String testURL2 = "https://i.imgur.com/yRuYCNI.gif";
     private static final UUID morimoriUUID = UUID.fromString("0f286fc2-0c86-42d5-8518-c306cad74f03");

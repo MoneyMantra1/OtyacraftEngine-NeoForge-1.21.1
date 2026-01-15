@@ -16,7 +16,7 @@ import net.minecraft.resources.ResourceLocation;
 import java.util.UUID;
 
 public class TestScreen extends Screen {
-    public static final ResourceLocation TEST_TEXTURE = new ResourceLocation("test", "textures/gui/test.png");
+    public static final ResourceLocation TEST_TEXTURE = ResourceLocation.fromNamespaceAndPath("test", "textures/gui/test.png");
     private static final Minecraft mc = Minecraft.getInstance();
     private final ProcessTimeMeasure processTimeMeasure = new ProcessTimeMeasure();
     private final UUID uuid = UUID.randomUUID();
